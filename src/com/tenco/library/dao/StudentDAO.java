@@ -44,11 +44,7 @@ public class StudentDAO {
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
-                Student student = new Student();
-                student.setId(rs.getInt("id"));
-                student.setName(rs.getString("name"));
-                student.setStudentId(rs.getString("student_id"));
-                studentList.add(student);
+               studentList.add(mapToStudent(rs));
             }
         }
         return studentList;
@@ -66,11 +62,7 @@ public class StudentDAO {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    Student student = new Student();
-                    student.setId(rs.getInt("id"));
-                    student.setName(rs.getString("name"));
-                    student.setStudentId(rs.getString("student_id"));
-                    return student;
+                    return mapToStudent(rs);
                 }
             }
 
@@ -78,8 +70,17 @@ public class StudentDAO {
         return null;
     }
 
+    // ResultSet -> Student 변환 메서드
+    private Student mapToStudent(ResultSet rs) throws SQLException {
+        return Student.builder()
+                .id(rs.getInt("id"))
+                .name(rs.getString("name"))
+                .studentId(rs.getString("student_id"))
+                .build();
+    }
+
     // 테스트 코드 작성
-    static void main(String[] args) {
+    static void main(String[] args) throws SQLException {
 
         Student student = Student
                 .builder()
