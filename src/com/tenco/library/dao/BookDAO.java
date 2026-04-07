@@ -85,18 +85,4 @@ public class BookDAO {
                 .available(rs.getBoolean("available"))
                 .build();
     }
-
-
-    // 테스트 코드 작성
-    public static void main(String[] args) {
-        try {
-            List<Book> resultList = new BookDAO().searchBooksByTitle("입문");
-            System.out.println(resultList);
-            System.out.println("------------------");
-            System.out.println(new BookDAO().getAllBooks());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }

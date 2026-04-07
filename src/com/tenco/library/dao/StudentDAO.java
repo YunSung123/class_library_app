@@ -78,20 +78,4 @@ public class StudentDAO {
                 .studentId(rs.getString("student_id"))
                 .build();
     }
-
-    // 테스트 코드 작성
-    static void main(String[] args) throws SQLException {
-
-        Student student = Student
-                .builder()
-                .studentId("202612345")
-                .name("고길동")
-                .build();
-
-        StudentDAO studentDAO = new StudentDAO();
-        // studentDAO.addStudent(student);
-        // System.out.println(studentDAO.getAllStudents().toString());
-//        Student resultStudent = studentDAO.authenticateStudent("20230001");
-//        System.out.println(resultStudent);
-    }
 }
