@@ -41,14 +41,4 @@ public class DatabaseUtil {
 
         return  connection;
     }
-
-    // TODO - 삭제 예정
-    // 테스트 코드 작성
-    public static void main(String[] args) {
-        try {
-            DatabaseUtil.getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

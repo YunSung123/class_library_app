@@ -191,19 +191,4 @@ public class BorrowDAO {
         }
 
     }
-
-    // 테스트 코드 작성
-    static void main(String[] args) throws SQLException {
-        BorrowDAO borrowDAO = new BorrowDAO();
-
-        // 반납해보기
-        borrowDAO.returnBook(1, 1);
-
-     /*   try {
-            List<Borrow> borrowList = borrowDAO.getBorrowedBooks();
-        } catch (SQLException e) {
-            System.out.println("-------------------");
-            System.out.println("오류 발생 : " + e.getMessage());
-        }*/
-    }
 }
